@@ -1,0 +1,49 @@
+Типы HTTP-запросов: GET, POST, PUT, DELETE
+
+POST /reg
+    вход: {
+        login: string,
+        email: string,
+        password: string
+    }
+    Проверяет валидность данных. Если невалидные - ошибка.
+    Записали в базу пользователя. Отправили письмо на почту со ссылкой. Ссылка должна быть записана в базу
+
+GET /confirm-email?code=...
+    Проверяет, что код есть в базе. Переписывает пользователя из таблицы неподтверждённых в таблицу подтверждённых
+
+POST /login
+    вход: {
+        login: string,
+        password: string
+    }
+    выход: {
+        
+    }
+
+записывать новые пункты в todo
+POST /todo
+    вход: {
+        text: string
+    }
+    выход: {
+        id: number
+    }
+
+получать список своих todo
+GET /todos
+    выход: Todo[]
+
+
+менять статус на выполнено/не выполнено у конкретного todo
+PUT /todo
+    вход: {
+        id: number,
+        text: string,
+        done: boolean
+    }
+    выход: 'ok'
+
+удалять todo
+DELETE /todo?id=$
+    выход: 'ok'
