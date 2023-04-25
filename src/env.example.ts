@@ -1,7 +1,7 @@
 export const basePathUrl = '/api/'
 export const mysqlOptions = {
     connectionLimit: 16,
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     password: '',
     database: 'todo'
